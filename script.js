@@ -1,4 +1,4 @@
-class Tooltip {
+export class Tooltip {
   constructor(selector, content, options) {
     this.selector = selector;
     this.content = content;

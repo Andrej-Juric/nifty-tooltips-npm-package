@@ -1,3 +1,7 @@
+:root {
+  --animation-delay: 0s;
+}
+
 body {
   display: flex;
   align-items: center;
