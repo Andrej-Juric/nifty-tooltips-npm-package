@@ -1,8 +1,8 @@
 {
   "name": "nifty-tooltips",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "Small package",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,12 @@
   "keywords": [
     "NTT"
   ],
+  "type": "module",
   "author": "Andrej Juric",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20"
+  }
 }
