@@ -17,7 +17,19 @@ class Tooltip {
         tooltip.classList.add(`tooltip-${options.theme || "info"}`);
         tooltip.classList.add(`animation-${options.animation || ""}`);
 
+        if (options.delay > 0) {
+          const animationDelay = options.delay / 1000 + "s";
+          document.documentElement.style.setProperty(
+            "--animation-delay",
+            animationDelay
+          );
+        }
+
         element.appendChild(tooltip);
+
+        setTimeout(() => {
+          tooltip.style.opacity = 1;
+        }, options.delay);
       });
 
       element.addEventListener("mouseleave", () => {
@@ -34,5 +46,5 @@ Tooltip.attach(".tooltip", "Front Tribe!", {
   position: "top", // top, right, bottom, left
   theme: "info", // info, warning, error, success,
   animation: "fade", // fade, slide, expand
-  delay: 500,
+  delay: 0,
 });

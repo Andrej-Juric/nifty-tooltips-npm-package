@@ -18,14 +18,56 @@ body {
 }
 
 .tooltip-text {
-  width: 100%;
-  min-height: 20px;
+  position: absolute;
+  z-index: 1;
   background-color: #2e3acc;
   color: white;
   padding: 10px;
   border-radius: 6px;
+  width: 120px;
+  min-height: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.tooltip-text.active {
+  opacity: 1;
+}
+
+.tooltip-text::before {
+  content: "";
   position: absolute;
-  z-index: 1;
+  border-width: 10px;
+  border-style: solid;
+}
+
+.tooltip-top::before {
+  bottom: -20px;
+  left: 50%;
+  margin-left: -10px;
+  border-color: #2e3acc transparent transparent transparent;
+}
+
+.tooltip-right::before {
+  left: -20px;
+  top: 50%;
+  margin-top: -10px;
+  border-color: transparent #2e3acc transparent transparent;
+}
+
+.tooltip-bottom::before {
+  top: -20px;
+  left: 50%;
+  margin-left: -10px;
+  border-color: transparent transparent #2e3acc transparent;
+}
+
+.tooltip-left::before {
+  right: -20px;
+  top: 50%;
+  margin-top: -10px;
+  border-color: transparent transparent transparent #2e3acc;
 }
 
 /* position change */
@@ -38,19 +80,19 @@ body {
 
 .tooltip-right {
   top: 50%;
-  left: 120px;
+  left: 160px;
   transform: translateY(-50%);
 }
 
 .tooltip-bottom {
-  top: 30px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .tooltip-left {
   top: 50%;
-  left: -120px;
+  left: -160px;
   transform: translateY(-50%);
 }
 
@@ -81,7 +123,7 @@ body {
 }
 
 .animation-fade {
-  animation: fade 1s;
+  animation: fade 1s var(--animation-delay);
 }
 
 /* animation slide */
@@ -97,7 +139,7 @@ body {
 }
 
 .animation-slide {
-  animation: slide 1s;
+  animation: slide 1s var(--animation-delay);
 }
 
 /* animation expand */
@@ -114,5 +156,5 @@ body {
 }
 
 .animation-expand {
-  animation: expand 0.3s;
+  animation: expand 0.3s var(--animation-delay);
 }
