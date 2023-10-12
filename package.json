@@ -1,10 +1,12 @@
 {
   "name": "nifty-tooltips",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "Small package",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack watch",
+    "dev-server": "webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -13,7 +15,6 @@
   "keywords": [
     "NTT"
   ],
-  "type": "module",
   "author": "Andrej Juric",
   "license": "ISC",
   "devDependencies": {
