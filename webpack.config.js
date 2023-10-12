@@ -1,7 +1,5 @@
 import path from "path";
 
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 const config = {
   entry: "./index.js",
   mode: "development",
@@ -25,6 +23,11 @@ const config = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
         exclude: /\.module\.css$/,
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
       },
     ],
   },
