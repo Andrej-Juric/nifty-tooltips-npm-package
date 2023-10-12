@@ -1,3 +1,5 @@
+import "./style.css";
+
 export class Tooltip {
   constructor(selector, content, options) {
     this.selector = selector;
