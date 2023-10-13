@@ -1,4 +1,4 @@
-import "./style.css";
+// import "./style.css";
 
 export class Tooltip {
   constructor(selector, content, options) {
@@ -6,6 +6,7 @@ export class Tooltip {
     this.content = content;
     this.options = options;
   }
+
   static attach(selector, content, options) {
     const elements = document.querySelectorAll(selector);
 
@@ -42,4 +43,23 @@ export class Tooltip {
       });
     });
   }
+  static detach(selector) {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
+      element.addEventListener("click", () => {
+        const tooltip = element.querySelector(".tooltip-text");
+        if (tooltip) {
+          tooltip.remove();
+        }
+      });
+    });
+  }
 }
+Tooltip.attach(".tooltip", "Front Tribe!", {
+  position: "top", // top, right, bottom, left
+  theme: "info", // info, warning, error, success,
+  animation: "fade", // slide, expand
+  delay: 0,
+});
+
+Tooltip.detach(".tooltip");
